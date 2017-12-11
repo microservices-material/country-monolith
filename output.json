@@ -1,0 +1,54 @@
+// beware!! This is *not* a valid JSON file. 
+// JSON does not allow comments
+{
+  // 1. countryMainData
+  //   (usa cityData para el nombre de la capital)
+  "name": "Argentina",
+  "continent": "America",
+  "capitalCityId": 1001,
+  "capitalCityName": "Buenos Aires",
+  "countryId": "1",
+
+  // 2. countryPopulationData
+  "population": {
+    "total": 44272125,
+    "males": 21668578,
+    "females": 22603547,
+    "countryId": "1"
+  },
+
+  // 3. mainCities
+  //   (usa cityData para los datos de cada ciudad)
+  "mainCities": [
+    {
+      "name": "Buenos Aires",
+      "latLng": {
+        "lat": -34.6,
+        "lng": -58.38
+      },
+      "population": 13588171,
+      "cityId": 1001
+    },
+    {
+      "name": "Cordoba",
+      "latLng": {
+        "lat": -31.42,
+        "lng": -64.18
+      },
+      "population": 1535868,
+      "cityId": 1002
+    },
+    {
+      "name": "Rosario",
+      "latLng": {
+        "lat": -32.95,
+        "lng": -60.65
+      },
+      "population": 1690816,
+      "cityId": 1003
+    }
+  ]
+}
+
+
+
