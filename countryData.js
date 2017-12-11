@@ -18,6 +18,7 @@ app.use(bodyParser.json());
 
 /* country consolidated data - http services */
 
+// country data
 app.get('/countries/:countryId/consolidatedData',function(request,response) {
   const countryId = request.params.countryId        // query parameter
   const authToken = request.get("Authorization")    // request header
@@ -61,6 +62,8 @@ app.post('/token',function(request,response) {
 })
 
 
+/* make app ready to accept requests */
+app.listen(8081, null, null, () => console.log('country information service ready'))
 
 
 /*
@@ -141,7 +144,6 @@ function cityData(cityId) {
 function latLng(lat,lng) { return { lat: lat, lng: lng} }
 
   
-app.listen(8081, null, null, () => console.log('country information service ready'))
 
 
 
