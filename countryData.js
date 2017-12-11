@@ -27,9 +27,9 @@ app.get('/countries/:countryId/consolidatedData',function(request,response) {
     .then(function(plainToken) {
       try {
         // obtain data 
-        let countryData = countryMainData(countryId)
-        let populationData = currentPopulationData(countryId)
-        let mainCitiesData = mainCities(countryId) 
+        var countryData = countryMainData(countryId)
+        var populationData = currentPopulationData(countryId)
+        var mainCitiesData = mainCities(countryId) 
         // assemble data and give response
         countryData.population = populationData
         countryData.mainCities = mainCitiesData
@@ -71,7 +71,7 @@ app.listen(8081, null, null, () => console.log('country information service read
 */
 
 function countryMainData(countryId) {
-  let theData = null
+  var theData = null
   if (countryId == 1) {
     theData = { name: 'Argentina', continent: 'America', capitalCityId: 1001 }
   } else if (countryId == 2) {
@@ -81,14 +81,14 @@ function countryMainData(countryId) {
   } else {
     throw new Error("There is no country having id " + countryId)
   }
-  let capitalData = cityData(theData.capitalCityId)
+  var capitalData = cityData(theData.capitalCityId)
   theData.capitalCityName = capitalData.name
   theData.countryId = countryId
   return theData
 }
 
 function currentPopulationData(countryId) {
-  let theData = null
+  var theData = null
   if (countryId == 1) {
     theData = { total: 44272125, males: 21668578, females: 22603547 }
   } else if (countryId == 2) {
@@ -103,7 +103,7 @@ function currentPopulationData(countryId) {
 }
 
 function mainCities(countryId) {
-  let theCities = null
+  var theCities = null
   if (countryId == 1) {
     theCities = [1001, 1002, 1003]
   } else if (countryId == 2) {
@@ -117,7 +117,7 @@ function mainCities(countryId) {
 }
 
 function cityData(cityId) {
-  let theData = null
+  var theData = null
   if (cityId == 1001) {
     theData = { name: 'Buenos Aires', latLng: latLng(-34.6,-58.38), population: 13588171 }
   } else if (cityId == 1002) {
